@@ -10,5 +10,5 @@ template <typename T> struct Nodo
 
 template <typename T> T pop(Nodo<T>* &pila)
 {
- 
+  
 }
