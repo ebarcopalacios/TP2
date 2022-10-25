@@ -5,11 +5,10 @@ template <typename T> struct Nodo
 {
   T dato;
   Nodo<T>* sig;
+  
 }
 
 template <typename T> T pop(Nodo<T>* &pila)
 {
-  if (pila == nullptr) {
-    std::cout << "Error: pop en pila vacia" << std::endl;
-  }
+ 
 }
