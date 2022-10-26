@@ -15,8 +15,7 @@ template <typename T> void push(Nodo<T>* &pila, T valor)
 	nuevo->sig = pila;
     if (nuevo->sig == nullptr)
         nuevo->ult = nuevo;
-    else 
-    {
+    else {
         Nodo<T>* aux_ult = nuevo->sig; 
         nuevo->ult = aux_ult->ult;
     }    
