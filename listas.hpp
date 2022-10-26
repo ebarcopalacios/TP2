@@ -8,7 +8,7 @@ template <typename T> struct Nodo
   Nodo<T>* ult; //la lista tambien debe apuntar al último nodo
 }
 
-template <typename T> void push(Nodo<T>* &pila, T valor)
+template <typename T> void push(Nodo<T>* &pila, Nodo<T>* &ultpila, T valor)
 {
 	Nodo<T>* nuevo = new Nodo<T>;
 	nuevo->dato = valor;
