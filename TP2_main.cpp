@@ -8,6 +8,14 @@ struct Pizza {
   int cant;
 };
 
+int criterio_pizza(Pizza a, Pizza b)
+{
+    if (a.gusto == b.gusto=
+        return 0;
+    else 
+        return a.gusto > b.gusto ? 1 : -1;
+}
+
 template <typename T> void mostrar(Nodo<T>* lista)
 {
     while (lista != nullptr) {
@@ -30,6 +38,27 @@ int main()
         cout << pop(pila, ultpila) << endl;
     cout << "fin mostrar pila" << endl;
     if (ultpila == nullptr)
-        cout << "ultpila == nullptr" << endl;
+        cout << "ultpila == nullptr" << endl;// para asegurarme que el ultimo nodo esta vacio
     cout << "-----------------" << endl;
+  
+    Nodo<string> *cola = nullptr;
+    Nodo<string> *ultcola = cola;
+    agregar(cola, ultcola, "uno"s);
+    agregar(cola, ultcola, "dos"s);
+    agregar(cola, ultcola, "tres"s);
+    mostrar(cola);
+    cout << endl << "Eliminamos" << endl;
+    while (cola != nullptr)
+        cout << pop(cola) << endl;
+    cout << "fin mostrar cola" << endl;
+    if (ultcola == nullptr)
+        cout << "utcola == nullptr" << endl;// para asegurarme que el ultimo nodo esta vacio
+    cout << "-----------------" << endl;
+  
+   
 }
+      
+
+
+
+
