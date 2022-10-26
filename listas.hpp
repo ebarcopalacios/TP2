@@ -39,3 +39,19 @@ template <typename T> T pop(Nodo<T>* &pila)
 	delete aux_elim;
 	return valor;
 }
+
+template <typename T> T agregar(Nodo<T>* &cola, Nodo<T>* &ultpila, T valor)
+{
+    Nodo<T>* nuevo = new Nodo<T>;
+    nuevo->dato = valor;
+    nuevo->sig = nullptr;
+    if (cola == nullptr) {
+        cola = nuevo;
+    } else {
+        Nodo<T>* aux = cola;
+        while (aux->sig != nullptr)
+            aux = aux->sig;
+        aux->sig = nuevo;
+    }
+    nuevo = ultpila;
+}
