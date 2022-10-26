@@ -46,6 +46,7 @@ int main()
     agregar(cola, ultcola, "uno"s);
     agregar(cola, ultcola, "dos"s);
     agregar(cola, ultcola, "tres"s);
+    cout << "Cola (uno dos tres)" << endl;
     mostrar(cola);
     cout << endl << "Eliminamos" << endl;
     while (cola != nullptr)
