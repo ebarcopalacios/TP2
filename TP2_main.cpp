@@ -49,7 +49,7 @@ int main()
     mostrar(cola);
     cout << endl << "Eliminamos" << endl;
     while (cola != nullptr)
-        cout << pop(cola) << endl;
+        cout << pop(cola, ultcola) << endl;
     cout << "fin mostrar cola" << endl;
     if (ultcola == nullptr)
         cout << "utcola == nullptr" << endl;// para asegurarme que el ultimo nodo esta vacio
