@@ -18,8 +18,9 @@ template <typename T> void push(Nodo<T>* &pila, T valor)
     else {
         Nodo<T>* aux_sig = nuevo->sig; 
         nuevo->ult = aux_sig->ult;
-    }    
+    }
 	pila = nuevo;
+    ultpila = nuevo->ult;
 }
 
 template <typename T> T pop(Nodo<T>* &pila)
