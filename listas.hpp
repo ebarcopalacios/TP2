@@ -40,7 +40,7 @@ template <typename T> T pop(Nodo<T>* &pila)
 	return valor;
 }
 
-template <typename T> T agregar(Nodo<T>* &cola, Nodo<T>* &ultpila, T valor)
+template <typename T> T agregar(Nodo<T>* &cola, Nodo<T>* &ultcola, T valor)
 {
     Nodo<T>* nuevo = new Nodo<T>;
     nuevo->dato = valor;
