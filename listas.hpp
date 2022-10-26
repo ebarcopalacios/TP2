@@ -1,5 +1,7 @@
 #ifndef LISTAS_HPP_INCLUDED
 #define LISTAS_HPP_INCLUDED
+//cuando vayas a editar, capaz las indentaciones se vean desordenadas pero en la vista normal
+//las indentaciones estan bien (no se porqué)
 
 template <typename T> struct Nodo
 {
