@@ -32,6 +32,7 @@ int main()
     push(pila, ultpila, 2);
     push(pila, ultpila, 3);
     cout << "Pila (1 2 3)" << endl;
+    cout << "*ultpila = " << *ultpila << endl;
     mostrar(pila);
     cout << endl << "Eliminamos" << endl;
     while (pila != nullptr)
@@ -47,6 +48,7 @@ int main()
     agregar(cola, ultcola, "dos"s);
     agregar(cola, ultcola, "tres"s);
     cout << "Cola (uno dos tres)" << endl;
+    cout << "*ultcola = " << *ultcola << endl;
     mostrar(cola);
     cout << endl << "Eliminamos" << endl;
     while (cola != nullptr)
