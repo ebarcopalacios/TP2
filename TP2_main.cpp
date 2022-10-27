@@ -39,7 +39,7 @@ int main()
         cout << pop(pila, ultpila) << endl;
     cout << "fin mostrar pila" << endl;
     if (ultpila == nullptr)
-        cout << "ultpila == nullptr" << endl;// para asegurarme que el ultimo nodo esta vacio
+        cout << "Puntero al últio nodo (ultpila) = nullptr" << endl;// para asegurarme que el ultimo nodo esta vacio
     cout << "-----------------" << endl;
   
     Nodo<string> *cola = nullptr;
@@ -55,7 +55,7 @@ int main()
         cout << pop(cola, ultcola) << endl;
     cout << "fin mostrar cola" << endl;
     if (ultcola == nullptr)
-        cout << "utcola == nullptr" << endl;// para asegurarme que el ultimo nodo esta vacio
+        cout << "Puntero al último nodo (ultcola) = nullptr" << endl;// para asegurarme que el ultimo nodo esta vacio
     cout << "-----------------" << endl;
   
    
