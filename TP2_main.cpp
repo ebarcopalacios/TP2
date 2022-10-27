@@ -32,14 +32,14 @@ int main()
     push(pila, ultpila, 2);
     push(pila, ultpila, 3);
     cout << "Pila (1 2 3)" << endl;
-    cout << "Dato del último nodo = " << ultpila->dato << endl;
+    cout << "Dato del ultimo nodo = " << ultpila->dato << endl;
     mostrar(pila);
     cout << endl << "Eliminamos" << endl;
     while (pila != nullptr)
         cout << pop(pila, ultpila) << endl;
     cout << "fin mostrar pila" << endl;
     if (ultpila == nullptr)
-        cout << "Puntero al últio nodo (ultpila) = nullptr" << endl;// para asegurarme que el ultimo nodo esta vacio
+        cout << "Puntero al ultimo nodo (ultpila) = nullptr" << endl;// para asegurarme que el ultimo nodo esta vacio
     cout << "-----------------" << endl;
   
     Nodo<string> *cola = nullptr;
@@ -55,7 +55,7 @@ int main()
         cout << pop(cola, ultcola) << endl;
     cout << "fin mostrar cola" << endl;
     if (ultcola == nullptr)
-        cout << "Puntero al último nodo (ultcola) = nullptr" << endl;// para asegurarme que el ultimo nodo esta vacio
+        cout << "Puntero al ultimo nodo (ultcola) = nullptr" << endl;// para asegurarme que el ultimo nodo esta vacio
     cout << "-----------------" << endl;
   
    
