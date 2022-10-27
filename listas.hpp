@@ -8,7 +8,7 @@ template <typename T> struct Nodo
   T dato;
   Nodo<T>* sig; 
   Nodo<T>* ult; //la lista tambien debe apuntar al último nodo
-}
+};
 
 template <typename T> void push(Nodo<T>* &pila, Nodo<T>* &ultpila, T valor)
 {
@@ -55,3 +55,5 @@ template <typename T> T agregar(Nodo<T>* &cola, Nodo<T>* &ultcola, T valor)
     }
     nuevo = ultpila;
 }
+
+#endif
