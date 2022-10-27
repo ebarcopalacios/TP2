@@ -25,7 +25,7 @@ template <typename T> void push(Nodo<T>* &pila, Nodo<T>* &ultpila, T valor)
     ultpila = nuevo->ult;
 }
 
-template <typename T> void pop(Nodo<T>* &pila, Nodo<T>* &ultpila)
+template <typename T> T pop(Nodo<T>* &pila, Nodo<T>* &ultpila)
 {
 	if (pila == nullptr) {
 		std::cout << "Error: pop en pila vacia" << std::endl;
