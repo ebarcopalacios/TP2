@@ -10,7 +10,7 @@ struct Pizza {
 
 int criterio_pizza(Pizza a, Pizza b)
 {
-    if (a.gusto == b.gusto=
+    if (a.gusto == b.gusto)
         return 0;
     else 
         return a.gusto > b.gusto ? 1 : -1;
