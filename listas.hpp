@@ -53,7 +53,7 @@ template <typename T> T agregar(Nodo<T>* &cola, Nodo<T>* &ultcola, T valor)
             aux = aux->sig;
         aux->sig = nuevo;
     }
-    nuevo = ultpila;
+    ultcola = nuevo;
 }
 
 #endif
