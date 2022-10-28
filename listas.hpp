@@ -10,33 +10,32 @@ template <typename T> struct Nodo
   Nodo<T>* ult; //la lista tambien debe apuntar al último nodo
 };
 
-template <typename T> void push(Nodo<T>* &pila, Nodo<T>* &ultpila, T valor)
+template <typename T> void push(T valor, punteros<T> &lista, Nodo<T>* &pila)
 {
-	Nodo<T>* nuevo = new Nodo<T>;
-	nuevo->dato = valor;
-	nuevo->sig = pila;
-    if (nuevo->sig == nullptr)
-        nuevo->ult = nuevo;
-    else {
-        Nodo<T>* aux_sig = nuevo->sig; 
-        nuevo->ult = aux_sig->ult;
+	Nodo<T>* ultpila = new Nodo<T>;
+	ultpila->dato = valor;
+	ultpila->sig = lista.ultimo;
+    if (lista.primero == nullptr) {
+        lista.primero = ultpila;
+        lista.ultimo = ultpila;
     }
-	pila = nuevo;
-    ultpila = nuevo->ult;
+    else {
+        lista.ultimo = ultpila;
+        pila = ultpila;
+    }
 }
 
-template <typename T> T pop(Nodo<T>* &pila, Nodo<T>* &ultpila)
+template <typename T> T pop(punteros<T> &lista, Nodo<T>* &listaN)
 {
-	if (pila == nullptr) {
+	if (listaN == nullptr) {
 		std::cout << "Error: pop en pila vacia" << std::endl;
 		exit(EXIT_FAILURE);
 	}
-	T valor = pila->dato;
-	Nodo<T>* aux_elim = pila;
-	pila = pila->sig;
-    if (pila == ultpila)
-        ultpila = nullptr;
-	delete aux_elim;
+    T valor = listaN->dato;
+    Nodo<T>* aux_ult = listaN;
+	lista.ultimo = aux_ult->sig;
+    listaN = lista.ultimo;
+	delete aux_ult;
 	return valor;
 }
 
