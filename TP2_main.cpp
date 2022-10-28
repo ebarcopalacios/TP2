@@ -8,6 +8,18 @@ struct Pizza {
   int cant;
 };
 
+// ============ ENTEROS
+int criterio_int(int a, int b)
+{
+    return a - b;
+}
+
+// ============ STRING
+int criterio_str(string a, string b)
+{
+    return (a < b) ? -1 : (a > b);
+}
+
 int criterio_pizza(Pizza a, Pizza b)
 {
     if (a.gusto == b.gusto)
@@ -16,48 +28,72 @@ int criterio_pizza(Pizza a, Pizza b)
         return a.gusto > b.gusto ? 1 : -1;
 }
 
-template <typename T> void mostrar(Nodo<T>* lista)
+ostream& operator << (ostream &os, Pizza& p)
 {
-    while (lista != nullptr) {
-        cout << lista->dato << endl;
-        lista = lista->sig;
-    }
+    os << p.gusto << " : " << p.cant;
+    return os;
 }
 
 int main()
 {
-    Nodo<int> *pila = nullptr;
-    Nodo<int> *ultpila = pila;
-    push(pila, ultpila, 1);
-    push(pila, ultpila, 2);
-    push(pila, ultpila, 3);
-    cout << "Pila (1 2 3)" << endl;
-    cout << "Dato del ultimo nodo = " << ultpila->dato << endl;
-    mostrar(pila);
+    punteros <int> lista;
+    Nodo<int>* pila = nullptr;
+    lista.primero = pila;
+    lista.ultimo = pila;
+    push(1, lista, pila);
+    push(2, lista, pila);
+    push(3, lista, pila);
+    Nodo<int>* mostrarlista = lista.ultimo; // si pongo mostrar(lista.ultimo) se desordenan los datos
+    mostrar(mostrarlista);
+    cout << "El valor del ultimo nodo es : " << lista.ultimo->dato << endl;
     cout << endl << "Eliminamos" << endl;
-    while (pila != nullptr)
-        cout << pop(pila, ultpila) << endl;
+    while (lista.ultimo != nullptr)
+        cout << pop(lista, pila) << endl;
     cout << "fin mostrar pila" << endl;
-    if (ultpila == nullptr)
-        cout << "Puntero al ultimo nodo (ultpila) = nullptr" << endl;// para asegurarme que el ultimo nodo esta vacio
+    if (pila == nullptr)
+        cout << "Puntero al ultimo nodo : nullptr" << endl;
     cout << "-----------------" << endl;
   
-    Nodo<string> *cola = nullptr;
-    Nodo<string> *ultcola = cola;
-    agregar(cola, ultcola, "uno"s);
-    agregar(cola, ultcola, "dos"s);
-    agregar(cola, ultcola, "tres"s);
-    cout << "Cola (uno dos tres)" << endl;
-    cout << "Dato del ultimo nodo = " << ultcola->dato << endl;
-    mostrar(cola);
+    punteros <string> listaS;
+    Nodo<string>* cola = nullptr;
+    listaS.primero = cola;
+    listaS.ultimo = cola;
+    agregar("uno"s, listaS, cola);
+    agregar("dos"s, listaS, cola);
+    agregar("tres"s, listaS, cola);
+    cout << endl << "Cola (uno dos tres)" << endl;
+    Nodo<string>* mostrarlistaS = listaS.primero;
+    mostrar(mostrarlistaS);
+    cout << "El valor del ultimo nodo es : " << listaS.ultimo->dato << endl;
     cout << endl << "Eliminamos" << endl;
-    while (cola != nullptr)
-        cout << pop(cola, ultcola) << endl;
-    cout << "fin mostrar cola" << endl;
-    if (ultcola == nullptr)
-        cout << "Puntero al ultimo nodo (ultcola) = nullptr" << endl;// para asegurarme que el ultimo nodo esta vacio
+    while(cola != nullptr)
+        cout << pop(listaS, cola) << endl;
+
     cout << "-----------------" << endl;
-  
+    
+    punteros <string> listaN;
+    Nodo<string>* colaN = nullptr;
+    listaN.primero = colaN;
+    listaN.ultimo = colaN;
+    agregar("Juan"s, listaN, colaN);
+    agregar("Pedro"s, listaN, colaN);
+    agregar("María"s, listaN, colaN);
+    cout << endl << "Datos para la búsqueda" << endl;
+    Nodo<string>* mostrarlistaN = listaN.primero;
+    mostrar(listaN.primero);
+    string nombre;
+    cout << endl << "Ingrese el nombre a buscar: ";
+    while (cin >> nombre) {
+        if (buscar_lineal(nombre, colaN, criterio_str) != nullptr)
+            cout << nombre << " SI está en la lista" << endl;
+        else
+            cout << nombre << " NO está en la lista" << endl;
+        cout << "Ingrese el nombre a buscar: ";
+    }
+
+    cin.clear(); // como force EOF debo limpiar los bits de error
+    cout << "-----------------" << endl;
+    
    
 }
       
