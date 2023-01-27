@@ -33,16 +33,14 @@ template <typename T> void agregar(T valor, punteros<T> &lista, Nodo<T>* &cola)
     Nodo<T>* ultcola = new Nodo<T>;
     ultcola->dato = valor;
     ultcola->sig = nullptr;
+    Nodo<T>* aux = cola;
     if (lista.primero == nullptr) {
         lista.primero = ultcola;
         lista.ultimo = ultcola;
         cola = lista.primero;
     } else {
         lista.ultimo = ultcola;
-        Nodo<T>* aux = lista.primero;
-        while (aux->sig != nullptr)
-            aux = aux->sig;
-        aux->sig = lista.ultimo;
+	ultcola->sig = aux;
     }
 }
 
