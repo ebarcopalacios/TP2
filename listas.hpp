@@ -42,7 +42,7 @@ template <typename T> void agregar(T valor, punteros<T> &lista, Nodo<T>* &cola)
     } else {
        	lista.ultimo = ultcola;
 		ultcola->sig = aux;
-	aux = ultcola;
+		aux = ultcola;
     }
 }
 
