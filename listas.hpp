@@ -30,19 +30,17 @@ template <typename T> void push(T valor, punteros<T> &lista, Nodo<T>* &pila)
 
 template <typename T> void agregar(T valor, punteros<T> &lista, Nodo<T>* &cola)
 {
-    Nodo<T>* ultcola = new Nodo<T>;
-    ultcola->dato = valor;
-    ultcola->sig = nullptr;
-    Nodo<T>* aux;
+    Nodo<T>* aux = lista.ultimo;
+    lista.ultimo = new Nodo<T>;
+    (lista.ultimo)->dato = valor;
+    (lista.ultimo)->sig = nullptr;
+
     if (lista.primero == nullptr) {
-        lista.primero = ultcola;
-        lista.ultimo = ultcola;
+        lista.primero = lista.ultimo;
         cola = lista.primero;
-		aux = cola;
     } else {
-       	lista.ultimo = ultcola;
         aux->sig = lista.ultimo;
-		aux = lista.ultimo;
+        aux = lista.ultimo;
     }
 }
 
